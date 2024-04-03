@@ -15,3 +15,4 @@ use App\Http\Controllers\FleaMarketController;
 */
 
 Route::get('/', [FleaMarketController::class, 'index']);
+Route::get('/register', [FleaMarketController::class, 'register']);
