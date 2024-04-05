@@ -10,9 +10,4 @@ class FleaMarketController extends Controller
     {
         return view('index');
     }
-    
-    public function register()
-    {
-        return view('register');
-    }
 }

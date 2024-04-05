@@ -19,10 +19,39 @@
         </a>
       </div>
       <nav class="header-nav">
+        @guest
         <ul class="header-nav-list">
-          <li class="header-nav-item"><a href="/login">ログイン</a></li>
-          <li class="header-nav-item"><a href="/register">会員登録</a></li>
-          <li class="header-nav-item"><a href="/sell">出品</a></li>
+          <li class="header-nav-item">
+            <a class="header-nav__link" href="/login">
+              ログイン
+            </a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav__link" href="/register">
+              会員登録
+            </a>
+          </li>
+        </ul>
+        @endguest
+        @if (Auth::check())
+        <ul class="header-nav-list">
+          <li class="header-nav-item">
+             <form action="/logout" method="post">
+              @csrf
+              <button class="header-nav__button">ログアウト</button>
+             </form>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav__link" href="/mypage">マイページ</a>
+          </li>
+        </ul>
+        @endif
+        <ul class="header-nav-list">
+          <li class="header-nav-item">
+            <a class="header-nav__link" href="/sell">
+              出品
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
