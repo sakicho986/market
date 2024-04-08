@@ -31,6 +31,11 @@
               会員登録
             </a>
           </li>
+          <li class="header-nav-item">
+            <a class="header-nav__link" href="/sell">
+              出品
+            </a>
+          </li>
         </ul>
         @endguest
         @if (Auth::check())
@@ -44,15 +49,13 @@
           <li class="header-nav-item">
             <a class="header-nav__link" href="/mypage">マイページ</a>
           </li>
-        </ul>
-        @endif
-        <ul class="header-nav-list">
           <li class="header-nav-item">
             <a class="header-nav__link" href="/sell">
               出品
             </a>
           </li>
         </ul>
+        @endif
       </nav>
     </div>
   </header>

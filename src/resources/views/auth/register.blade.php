@@ -25,7 +25,7 @@
            @csrf
           <div class="register-form__group">
             <label class="register-form__label" for="email">メールアドレス</label>
-            <input class="register-form__input" type="mail" name="email" id="email">
+            <input class="register-form__input" type="email" name="email" id="email">
             <p class="register-form__error-message">
               @error('email')
               {{ $message }}
