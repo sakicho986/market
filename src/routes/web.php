@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FleaMarketController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +16,6 @@ use App\Http\Controllers\FleaMarketController;
 */
 
 Route::get('/', [FleaMarketController::class, 'index']);
+Route::middleware('auth')->group(function () {
+    Route::get('/mypage', [AuthController::class, 'mypage']);
+});
