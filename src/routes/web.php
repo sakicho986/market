@@ -19,3 +19,12 @@ Route::get('/', [FleaMarketController::class, 'index']);
 Route::middleware('auth')->group(function () {
     Route::get('/mypage', [AuthController::class, 'mypage']);
 });
+Route::middleware('auth')->group(function () {
+    Route::get('/mypage/profile', [AuthController::class, 'profile']);
+    Route::post('/mypage/profile', [AuthController::class, 'profile']);
+});
+Route::get('/item/:item_id', [FleaMarketController::class, 'item']);
+Route::get('/sell', [FleaMarketController::class, 'sell']);
+
+Route::get('/profile', [AuthController::class, 'edit']);
+Route::post('/profile', [AuthController::class, 'update']);

@@ -18,4 +18,24 @@ class FleaMarketController extends Controller
     {
         return view('mypage');
     }
+
+        public function item()
+    {
+        return view('item');
+    }
+        public function profile()
+    {
+        return view('profile');
+    }
+        public function sell()
+    {
+        return view('sell');
+    }
+
+    public function update(profile $request)
+    {
+        $user = $request->only(['address', 'name', 'post', 'building', 'pic' ]);
+        Todo::find($request->id)->update($user);
+        return redirect('/mypage');
+    }
 }
